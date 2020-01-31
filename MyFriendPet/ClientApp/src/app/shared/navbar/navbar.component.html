@@ -1,0 +1,47 @@
+<!-- main banner -->
+<div class="main-top" id="home" style="background-color:whitesmoke; height:73px;">
+  <!-- header -->
+
+    <div class="container-fluid">
+      <div class="header-wthree-top-w3layouts d-md-flex justify-content-between align-items-center py-3 px-xl-5 px-lg-3 px-2">
+        <!-- logo -->
+        <h4 class="logo">
+          <a [routerLink]="['/about']" style="color:orange;">Mi Amigo Pet &nbsp;</a> <br /><i class="fa fa-user" style="color:black;">&nbsp;</i> <span *ngIf="auth.userProfile$ | async as profile">{{ profile.given_name }}</span>
+        </h4>
+
+        <!-- //logo -->
+        <!-- menu -->
+        <ul id="menu">
+          <li>
+            <input id="check02" type="checkbox" name="menu" />
+            <label for="check02"><span class="fa fa-bars" aria-hidden="true"></span></label>
+            <ul class="submenu">
+              <li><a [routerLink]="['/about']" class="active">Inicio</a></li>
+              <li><a [routerLink]="['/about'] " routerLinkActive="active" >Nosotros</a></li>
+              <li><a [routerLink]="['/services']">Servicios Sociales</a></li>
+              <li><a [routerLink]="['/pet-walker'] " routerLinkActive="active">Entrenadores</a></li>
+              <li><a [routerLink]="['/news'] " routerLinkActive="active">Noticias</a></li>
+              <li><a [routerLink]="['/adoption']" routerLinkActive="active" >Adoptar</a></li>
+              <li><a  [routerLink]="['/contact']" routerLinkActive="active" >Contacto</a></li>
+              <li class="my-style">
+                <a (click)="auth.login()" *ngIf="!auth.loggedIn">Log In</a>
+                <a (click)="auth.logout()" *ngIf="auth.loggedIn">Log Out <i class="fa fa-times"></i></a>
+              </li>
+            </ul>
+          </li>
+
+        </ul>
+        <!-- //menu -->
+      </div>
+    </div>
+
+  <!-- //header -->
+
+</div>
+<!-- //main banner -->
+<!--<pre *ngIf="auth.userProfile$ | async as profile">
+  <code>{{ profile.given_name | json }}</code>
+</pre>-->
+<!--{{ auth.loggedIn}}-->
+
+
